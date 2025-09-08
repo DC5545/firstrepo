@@ -63,13 +63,12 @@ public class Book {
         if (this == o) return true;
         if(!(o instanceof Book)) return false;
         Book book = (Book) o;
-        return title != null && author != null
-                && title.equalsIgnoreCase(book.title) && author.equalsIgnoreCase(book.author);
+        return title.equalsIgnoreCase(book.title) && author.equalsIgnoreCase(book.author);
     }
 
     //Hascode()
-    public int hastCode() {
-        return Objects.hash(tittle == null ? null : title.toLowercase(), author == null ? author.toLowercase());
+    public int hashCode() {
+        return Objects.hash(title.toLowerCase(), author.toLowerCase());
     }
 
 }
